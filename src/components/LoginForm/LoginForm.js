@@ -1,18 +1,25 @@
-import React from 'react'
+import React,{useState} from 'react'
 
-function LoginForm() {
+function LoginForm({ Login,error}) {
+    const [details, setDetails] = useState({UserName:'',Password:''});
+    const submitHandler = e => {
+        e.preventDefault();
+
+        Login(details)
+    }
+
     return (
-        <form>
+        <form onSubmit={submitHandler}>
             <div className='form-inner'>
             <h2>Login</h2>
             {/*ERROR*/}
              <div className='form-group'>
-                    <label htmlFor='name'> UserName:</label>
-                    <input type='text' name='name' id='name'/>
+                    <label htmlFor='UserName'> UserName:</label>
+                    <input type='text' name='UserName' id='UserName' onChange={e => setDetails({...details, UserName: e.target.value})}/>
                 </div>
                 <div className='form-group'>
-                    <label htmlFor='password'> Password:</label>
-                    <input type='password' password='password' id='password'/>
+                    <label htmlFor='Password'> Password:</label>
+                    <input type='text' name='Password' id='Password' onChange={e => setDetails({...details, Password: e.target.value})}/>
                 </div>
                 <input type='submit' value='LOGIN'/>
             </div>
