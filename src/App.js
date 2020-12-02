@@ -22,7 +22,8 @@ function App() {
           Password: details.Password
         })
         }else{
-        console.log('Login Failuer')
+        console.log('Login Failuer');
+        setError('Login Failuer');
       } 
     }
     
