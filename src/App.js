@@ -1,18 +1,22 @@
-import React from 'react';
-import { withAuthenticator, AmplifySignIn, } from '@aws-amplify/ui-react';
+import React, { Component } from 'react';
+import { withAuthenticator } from '@aws-amplify/ui-react';
 import './App.css';
 import LandingPage from './components/LandingPage/LandingPage'
-// import Amplify from 'aws-amplify';
+import { Auth } from 'aws-amplify'
 
-function App() {
-  return (
-    <div className="App">
-      {/* <AmplifySignIn /> */}
-      <div className='container'>
-      <LandingPage/>
+class App extends Component {
+  componentDidMount() {
+    console.log(Auth.user.username)
+  }
+  render() {
+    return (
+      <div className="App">
+        {/* <AmplifySignIn /> */}
+        <div className='container'>
+          <LandingPage />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
-
 export default withAuthenticator(App);
