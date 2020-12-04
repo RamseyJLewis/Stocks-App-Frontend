@@ -11,7 +11,7 @@ import { iex } from '../config/iex';
 
         componentDidMount(){
             //query the API
-            const url = `${iex.base_url}/stock/${this.props.ticker}/batch?types=quote,news,chart&range=1m&last=10&token=${iex.api_token}`
+            const url = `${iex.base_url}/stock/${this.props.symbol}/batch?types=quote,news,chart&range=1m&last=10&token=${iex.api_token}`
 //https://cloud.iexapis.com/stable/stock/vwi/interday-prices?chartLast=1&token=sk_27ea4b46c1f34a109885839483ce5969
 //https://cloud.iexapis.com/stable/
 //https://cloud.iexapis.com/stable/stock/aapl/batch?types=quote,news,chart&range=1m&last=10&token=sk_27ea4b46c1f34a109885839483ce5969
@@ -24,14 +24,13 @@ import { iex } from '../config/iex';
                 })
             })
         }
-
         render() {
             return (
             <tr>
-                <td>{this.props.ticker}</td>
-                <td>{this.state.data.price}</td>
-                <td>{this.state.data.date}</td>
-                <td>{this.state.data.time}</td>
+                <td>{this.props.symbol}</td>
+                <td>{this.state.data?.quote?.low}</td>
+                <td>{this.state.data?.quote?.high}</td>
+                <td>{this.state.data?.quote?.latestTime}</td>
             </tr>
         )
     }

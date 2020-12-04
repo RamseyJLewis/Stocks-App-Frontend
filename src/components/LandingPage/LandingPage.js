@@ -1,29 +1,37 @@
-import React from 'react';
+import React, { Component } from 'react';
 import StockRow from '../StockRow/StockRow'
 import './LandingPage.css';
 
 
-function LandingPage() {
-    return (
-        <div>
-            <table className='table mt-5'>
-                <thead>
-                    <tr>
-                        <th>Ticker</th>
-                        <th>Price</th>
-                        <th>Date</th>
-                        <th>Time</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <StockRow ticker='aapl' />
-                    <StockRow ticker='tsla'/>
-                    <StockRow ticker='dia' />
-                    <StockRow ticker='qqq' />
-                </tbody>
-            </table>
-        </div>
-    )
+class LandingPage extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+           data:{}
+        }
+    }
+    render(){
+        return (
+            <div>
+                <table className='table mt-5'>
+                    <thead>
+                        <tr>
+                            <th>symbol</th>
+                            <th>low</th>
+                            <th>high</th>
+                            <th>latestTime</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <StockRow symbol='aapl' />
+                        <StockRow symbol='tsla'/>
+                        <StockRow symbol='dia' />
+                        <StockRow symbol='qqq' />
+                    </tbody>
+                </table>
+            </div>
+        )
+    }
 }
 export default LandingPage
 
