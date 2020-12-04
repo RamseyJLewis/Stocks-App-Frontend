@@ -6,7 +6,8 @@ import './LandingPage.css';
 class LandingPage extends Component {
     constructor(props) {
         super(props)
-        this.state = {
+        this.state = { 
+            symbols: ['QQQ'],
             data: {}
         }
     }
@@ -22,13 +23,8 @@ class LandingPage extends Component {
                             <th>high</th>
                             <th>latestTime</th>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <StockRow symbol='aapl' />
-                        <StockRow symbol='tsla' />
-                        <StockRow symbol='dia' />
-                        <StockRow symbol='qqq' />
-                    </tbody>
+                    </thead>                                     
+                        <StockRow symbols= {this.state.symbols} />                   
                 </table>
             </div>
         )
@@ -40,3 +36,8 @@ export default LandingPage
 
 // TOKEN = sk_42dd3ac312574d569cb08b524734d798
 // URL = GET /stock/{QQQ}/intraday-prices
+
+
+
+//URL = https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=IBM&apikey=demo
+// new toke = PF5IS1XCSM83DWA6
