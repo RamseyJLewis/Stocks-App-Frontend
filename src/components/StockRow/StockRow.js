@@ -46,12 +46,14 @@ class StockRow extends Component {
         let latestPrice = this.state.data[0].quote.latestPrice
 
         return (
-            <tr>
-                    <td> {ticker}</td>
-                    <td> {chartLow}</td>
-                    <td> {chartHigh}</td>
-                    <td>{latestPrice}</td>
-            </tr>
+            <div class="container">
+                <div class="row">
+                    <div> Ticker: {ticker}</div>
+                    <div>  Low: {chartLow}</div>
+                    <div> High: {chartHigh}</div>
+                    <div>latestPrice: {latestPrice}</div>
+                </div>
+            </div>
 
         )
     }
