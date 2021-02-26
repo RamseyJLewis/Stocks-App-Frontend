@@ -5,7 +5,7 @@ import './LandingPage.css';
 
 let inputTicker = ['aapl']
 
-class LandingPage extends Component {    
+class LandingPage extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -17,7 +17,8 @@ class LandingPage extends Component {
     render() {
 
         return (
-            <div class="container">          
+            <div class="container">
+                    
                 <StockRow symbols={this.state.symbols} />
             </div>
         )

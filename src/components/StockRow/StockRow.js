@@ -47,12 +47,10 @@ class StockRow extends Component {
 
         return (
             <div class="container">
-                <div class="row">
-                    <div> Ticker: {ticker}</div>
-                    <div>  Low: {chartLow}</div>
-                    <div> High: {chartHigh}</div>
-                    <div>latestPrice: {latestPrice}</div>
-                </div>
+                    <div class="row"> Ticker: {ticker}</div>
+                    <div>  Today's Low: {chartLow}</div>
+                    <div> Today's High: {chartHigh}</div>
+                    <div>Latest Price: {latestPrice}</div>
             </div>
 
         )
